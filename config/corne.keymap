@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
@@ -223,9 +223,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q            &kp W            &kp E          &kp R         &kp T          &kp Y      &kp U            &kp I                     &kp O            &kp P          &kp BSPC
-&kp LCTRL       &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LSHFT D   &hml LCTRL F  &kp G          &kp H      &hmr RCTRL J     &hmr RSHFT K              &hmr LEFT_ALT L  &hmr RGUI SQT  &kp ESC
-&kp LEFT_SHIFT  &kp Z            &kp X            &kp C          &kp V         &kp B          &kp N      &kp M            &kp COMMA                 &kp DOT          &kp FSLH       &mo 7
+&kp TAB         &kp Q            &kp W            &kp E          &kp R         &kp T          &kp Y      &kp U            &kp I                      &kp O            &kp P          &kp BSPC
+&kp LCTRL       &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LSHFT D   &hml LCTRL F  &kp G          &kp H      &hmr RCTRL J     &hmr RSHFT K               &hmr LEFT_ALT L  &hmr RGUI SQT  &kp ESC
+&kp LEFT_SHIFT  &kp Z            &kp X            &kp C          &kp V         &kp B          &kp N      &kp M            &kp COMMA                  &kp DOT          &kp FSLH       &mo 7
                                                   &kp LEFT_META  &lt 1 TAB     &lt 7 SPACE    &kp ENTER  &lt 2 BACKSPACE  &magic_shift LEFT_SHIFT 0
             >;
         };
@@ -238,9 +238,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB      &kp PG_DN     &kp PG_UP     &kp INS         &trans     &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
+&kp TAB      &trans        &trans        &trans          &trans     &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
 &tog 4       &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_SHIFT  &sk LCTRL  &trans    &kp LEFT            &kp DOWN        &kp UP         &kp RIGHT            &kp PAGE_UP     &tog 5
-&bootloader  &trans        &trans        &trans          &trans     &trans    &kp LC(HOME)        &msc SCRL_DOWN  &msc SCRL_UP   &kp RC(END)          &kp PAGE_DOWN   &kp INSERT
+&bootloader  &trans        &trans        &trans          &trans     &trans    &kp LA(LEFT_ARROW)  &msc SCRL_DOWN  &msc SCRL_UP   &kp RA(RIGHT_ARROW)  &kp PAGE_DOWN   &kp INSERT
                                          &kp LGUI        &trans     &trans    &trans              &trans          &kp LEFT_ALT
             >;
         };
@@ -292,10 +292,10 @@
 
         wm {
             bindings = <
-&kp LG(TAB)  &kp LG(N1)      &kp LG(N2)      &kp LG(N3)      &kp LG(N4)      &kp LG(N5)        &kp RG(N6)      &kp RG(N7)      &kp RG(N8)      &kp RG(N9)      &kp RG(N0)      &trans
-&trans       &kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp RS(RG(N5))    &kp LG(LS(N6))  &kp RG(RS(N7))  &kp RG(RS(N8))  &kp RS(RG(N9))  &kp RS(RG(N0))  &trans
-&trans       &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans          &trans
-                                             &trans          &trans          &trans            &trans          &trans          &trans
+&trans  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp RG(N6)      &kp RG(N7)   &kp RG(N8)     &kp RG(N9)  &kp RG(N0)  &trans
+&trans  &trans      &trans      &trans      &kp TAB     &trans        &trans          &trans       &trans         &trans      &trans      &trans
+&trans  &trans      &trans      &trans      &trans      &trans        &trans          &kp PAGE_UP  &kp PAGE_DOWN  &trans      &trans      &trans
+                                &trans      &trans      &trans        &kp LEFT_SHIFT  &trans       &trans
             >;
         };
     };
