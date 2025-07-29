@@ -245,10 +245,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB      &trans        &trans        &trans    &trans       &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
-&tog 4       &sk LEFT_GUI  &sk LEFT_ALT  &kp LS(TAB)   &swapper &trans    &kp LEFT            &kp DOWN        &kp UP         &kp RIGHT            &kp PAGE_UP     &tog 5
-&bootloader  &trans        &trans        &trans    &trans       &trans    &kp LA(LEFT_ARROW)  &msc SCRL_DOWN  &msc SCRL_UP   &kp RA(RIGHT_ARROW)  &kp PAGE_DOWN   &kp INSERT
-                                         &kp LGUI  &trans       &trans    &trans              &trans          &kp LEFT_ALT
+&kp TAB      &trans        &trans        &kp LC(LS(TAB))  &kp RC(TAB)  &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
+&tog 4       &sk LEFT_GUI  &sk LEFT_ALT  &swapper         &kp LS(TAB)  &trans    &kp LEFT            &kp DOWN        &kp UP         &kp RIGHT            &kp PAGE_UP     &tog 5
+&bootloader  &trans        &trans        &trans           &trans       &trans    &kp LA(LEFT_ARROW)  &msc SCRL_DOWN  &msc SCRL_UP   &kp RA(RIGHT_ARROW)  &kp PAGE_DOWN   &kp INSERT
+                                         &kp LGUI         &trans       &trans    &trans              &trans          &kp LEFT_ALT
             >;
         };
 
