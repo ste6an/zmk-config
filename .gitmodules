@@ -1,0 +1,3 @@
+[submodule "modules/tri-state"]
+	path = modules/tri-state
+	url = https://github.com/urob/zmk-tri-state.git

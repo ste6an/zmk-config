@@ -201,9 +201,16 @@
             require-prior-idle-ms = <150>;
         };
 
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+
+            ignored-key-positions = <15 16 18 19 20 21>;
+        };
+
         lrt: lrt {
             compatible = "zmk,behavior-hold-tap";
-            label = "LRT";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -238,10 +245,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB      &trans        &trans        &trans          &trans     &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
-&tog 4       &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_SHIFT  &sk LCTRL  &trans    &kp LEFT            &kp DOWN        &kp UP         &kp RIGHT            &kp PAGE_UP     &tog 5
-&bootloader  &trans        &trans        &trans          &trans     &trans    &kp LA(LEFT_ARROW)  &msc SCRL_DOWN  &msc SCRL_UP   &kp RA(RIGHT_ARROW)  &kp PAGE_DOWN   &kp INSERT
-                                         &kp LGUI        &trans     &trans    &trans              &trans          &kp LEFT_ALT
+&kp TAB      &trans        &trans        &trans    &trans       &trans    &kp HOME            &kp LC(LEFT)    &kp RC(RIGHT)  &kp END              &kp LC(DELETE)  &kp RC(BSPC)
+&tog 4       &sk LEFT_GUI  &sk LEFT_ALT  &kp LS(TAB)   &swapper &trans    &kp LEFT            &kp DOWN        &kp UP         &kp RIGHT            &kp PAGE_UP     &tog 5
+&bootloader  &trans        &trans        &trans    &trans       &trans    &kp LA(LEFT_ARROW)  &msc SCRL_DOWN  &msc SCRL_UP   &kp RA(RIGHT_ARROW)  &kp PAGE_DOWN   &kp INSERT
+                                         &kp LGUI  &trans       &trans    &trans              &trans          &kp LEFT_ALT
             >;
         };
 
@@ -292,10 +299,10 @@
 
         wm {
             bindings = <
-&trans  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp RG(N6)      &kp RG(N7)   &kp RG(N8)     &kp RG(N9)  &kp RG(N0)  &trans
-&trans  &trans      &trans      &trans      &kp TAB     &trans        &trans          &trans       &trans         &trans      &trans      &trans
-&trans  &trans      &trans      &trans      &trans      &trans        &trans          &kp PAGE_UP  &kp PAGE_DOWN  &trans      &trans      &trans
-                                &trans      &trans      &trans        &kp LEFT_SHIFT  &trans       &trans
+&trans  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)   &kp LG(N5)    &kp RG(N6)      &kp RG(N7)       &kp RG(N8)         &kp RG(N9)  &kp RG(N0)  &trans
+&trans  &trans      &trans      &trans      &kp LG(TAB)  &trans        &trans          &trans           &trans             &trans      &trans      &trans
+&trans  &trans      &trans      &trans      &trans       &trans        &trans          &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &trans      &trans      &trans
+                                &trans      &trans       &trans        &kp LEFT_SHIFT  &trans           &trans
             >;
         };
     };
@@ -309,3 +316,4 @@
         };
     };
 };
+
